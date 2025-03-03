@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className="relative w-full min-h-screen bg-gradient-to-r from-[#080313] to-[#160a2a] text-white">
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-6 md:px-16 lg:px-28 py-6 md:py-8 relative z-10">
+      <nav className="flex justify-between items-center px-6 md:px-16 lg:px-28 py-6 md:py-12 relative z-10">
         {/* Logo & Email */}
         <div className="flex items-center space-x-4 md:space-x-9">
           <Image src={logo} alt="Logo" className="h-12 w-12 md:h-14 md:w-14" />
@@ -23,7 +23,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white">
+        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-sm">
           {[
             "Services",
             "Works",
@@ -71,9 +71,7 @@ const Header = () => {
         <Image src={logo} alt="Logo" className="h-16 w-16" />
 
         {/* Email with better spacing */}
-        <span className="text-sm text-gray-300 mb-4">
-          musfiraansari05@gmail.com
-        </span>
+        <span className="text-sm text-gray-300 mb-4">anas@gmail.com</span>
 
         {/* Navigation Links */}
         {[
@@ -101,11 +99,11 @@ const Header = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center px-6 sm:px-10 md:px-20 lg:px-32 py-16 md:py-20 relative z-10 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center px-6 sm:px-10 md:px-20 lg:px-32 py-16 md:py-28 relative z-10 gap-8">
         {/* Left Text Section */}
         <div className="text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
-            I am <span className="text-white">Musfira</span>
+          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold leading-snug">
+            I am <span className="text-white">Anas</span>
           </h1>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text mt-2 leading-tight"
