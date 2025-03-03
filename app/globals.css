@@ -1,0 +1,27 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
+
+@import "tailwindcss";
+
+
+
+:root {
+  --font-sans: "Sora", sans-serif;
+  --font-mono: monospace;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+}
