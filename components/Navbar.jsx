@@ -71,7 +71,7 @@ const Header = () => {
         <Image src={logo} alt="Logo" className="h-16 w-16" />
 
         {/* Email with better spacing */}
-        <span className="text-sm text-gray-300 mb-4">anas@gmail.com</span>
+        <span className="text-sm text-gray-300 mb-4">anasmairaj784@gmail.com</span>
 
         {/* Navigation Links */}
         {[
@@ -99,7 +99,7 @@ const Header = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center px-6 sm:px-10 md:px-20 lg:px-32 py-16 md:py-12 relative z-10 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center px-6 sm:px-10 md:px-20 lg:px-32 py-16 md:py-16 relative z-10 gap-8">
         {/* Left Text Section */}
         <div className="text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold leading-snug">
