@@ -5,32 +5,45 @@ const ServicesSection = () => {
   const services = [
     {
       id: "01",
-      title: "Web Development",
+      title: "Shopify Development",
       description:
-        "Ensure your website looks great on any device, with layouts that adapt to different screen sizes seamlessly.",
+        "Custom Shopify store design and development, optimized for performance, conversion, and seamless user experience.",
     },
     {
       id: "02",
-      title: "UI/UX Design",
+      title: "WordPress Development",
       description:
-        "Set up user-friendly CMS solutions like WordPress or custom-built options so clients can manage content easily.",
+        "Custom WordPress themes, CMS setup, and plugin integration tailored to your business needs with easy content management.",
     },
     {
       id: "03",
-      title: "Content Writing",
+      title: "Next.js 14 & React Development",
       description:
-        "Build and integrate APIs to connect websites with third-party applications, enhancing functionality and performance.",
+        "Modern web applications built with Next.js 14 and React – fast, scalable, SEO-friendly, and high-performing.",
     },
     {
       id: "04",
-      title: "Digital Marketing",
+      title: "MERN Stack Development",
       description:
-        "Refresh outdated websites with modern, appealing designs that align with current brand goals and user expectations.",
+        "End-to-end full stack web development using MongoDB, Express.js, React, and Node.js for powerful business applications.",
+    },
+    {
+      id: "05",
+      title: "Full Stack Web Development",
+      description:
+        "Complete frontend and backend solutions with clean code architecture, responsive design, and scalable infrastructure.",
+    },
+    {
+      id: "06",
+      title: "UI/UX Design",
+      description:
+        "Engaging and intuitive user interface & user experience design that enhances usability and boosts customer retention.",
     },
   ];
+  
 
   return (
-    <section className="bg-black text-white py-32 px-6 md:px-16">
+    <section  id="services"  className="bg-black text-white py-32 px-6 md:px-16">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold">

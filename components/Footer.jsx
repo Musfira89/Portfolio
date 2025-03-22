@@ -11,20 +11,19 @@ const Footer = () => {
         <Image src={logo} alt="Logo" className="h-12 w-12 md:h-16 md:w-16" />
 
         {/* Navigation Links */}
-        <nav className="flex flex-wrap justify-center space-x-6 text-sm md:text-base leading-relaxed">
-          {["About", "Services", "Portfolios", "Contact"].map((item, index) => (
-            <a key={index} href="#" className="hover:text-white transition">
-              {item}
-            </a>
-          ))}
+        <nav className="flex flex-wrap justify-center gap-6 text-sm md:text-base leading-relaxed">
+          <a href="#home" className="hover:text-white transition">Home</a>
+          <a href="#services" className="hover:text-white transition">Services</a>
+          <a href="#works" className="hover:text-white transition">Work</a>
+          <a href="#contact" className="hover:text-white transition">Contact</a>
         </nav>
       </div>
 
-      {/* Copyright (Positioned at the bottom) */}
+      {/* Copyright */}
       <div className="mt-8">
         <p className="text-xs md:text-sm">
-          © 2024 All rights reserved by{" "}
-          <span className="text-white font-semibold">AnasPortfolio</span>
+          © 2025 All rights reserved by{" "}
+          <span className="text-white font-semibold">AressPortfolio</span>
         </p>
       </div>
 

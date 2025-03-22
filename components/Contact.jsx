@@ -7,7 +7,10 @@ import {
 
 const ContactSection = () => {
   return (
-    <section className="flex flex-col md:flex-row justify-between items-center bg-black text-white p-8 md:p-40 gap-16">
+    <section
+      id="contact"
+      className="flex flex-col md:flex-row justify-between items-center bg-black text-white p-8 md:p-40 gap-16"
+    >
       {/* Left Side - Contact Form */}
       <div className="bg-[#090513] p-6 md:p-10 rounded-xl w-full max-w-2xl mx-auto shadow-xl">
         <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-4 text-center md:text-left">
@@ -65,42 +68,48 @@ const ContactSection = () => {
 
       {/* Right Side - Contact Info */}
       <div className="space-y-6 text-white w-full md:w-[40%]">
-      {/* Phone */}
-      <div className="flex items-center space-x-4 ">
-        <div className="p-3 rounded-full border-2 border-purple-800 w-12 h-12">
-          <FontAwesomeIcon icon={faPhone} className="text-purple-800 text-lg" />
+        {/* Phone */}
+        <div className="flex items-center space-x-4 ">
+          <div className="p-3 rounded-full border-2 border-purple-800 w-12 h-12">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="text-purple-800 text-lg"
+            />
+          </div>
+          <div>
+            <p className="text-gray-300 text-sm">Phone</p>
+            <p className="font-semibold text-lg">+92 312 4180123</p>
+          </div>
         </div>
-        <div>
-          <p className="text-gray-300 text-sm">Phone</p>
-          <p className="font-semibold text-lg">+01 123 654 8096</p>
-        </div>
-      </div>
 
-      {/* Email */}
-      <div className="flex items-center space-x-4">
-        <div className="p-3 rounded-full border-2 border-purple-800 w-12 h-12">
-          <FontAwesomeIcon icon={faEnvelope} className="text-purple-800 text-lg" />
+        {/* Email */}
+        <div className="flex items-center space-x-4">
+          <div className="p-3 rounded-full border-2 border-purple-800 w-12 h-12">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="text-purple-800 text-lg"
+            />
+          </div>
+          <div>
+            <p className="text-gray-300 text-sm">Email</p>
+            <p className="font-semibold text-lg">areesshah678@gmail.com</p>
+          </div>
         </div>
-        <div>
-          <p className="text-gray-300 text-sm">Email</p>
-          <p className="font-semibold text-lg">            anasmairaj784@gmail.com
-</p>
-        </div>
-      </div>
 
-      {/* Address */}
-      <div className="flex items-center space-x-4">
-        <div className="p-4 rounded-full border-2 border-purple-800 w-12 h-12">
-          <FontAwesomeIcon icon={faMapMarkerAlt} className="text-purple-800 text-lg" />
-        </div>
-        <div>
-          <p className="text-gray-300 text-sm">Address</p>
-          <p className="font-semibold text-lg">
-            Warne Park Street Pine, <br /> FL 33157, New York
-          </p>
+        {/* Address */}
+        <div className="flex items-center space-x-4">
+          <div className="p-4 rounded-full border-2 border-purple-800 w-12 h-12">
+            <FontAwesomeIcon
+              icon={faMapMarkerAlt}
+              className="text-purple-800 text-lg"
+            />
+          </div>
+          <div>
+            <p className="text-gray-300 text-sm">Address</p>
+            <p className="font-semibold text-lg">Karachi , Pakistan</p>
+          </div>
         </div>
       </div>
-    </div>
     </section>
   );
 };
