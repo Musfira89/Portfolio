@@ -299,7 +299,7 @@ export const mernProjects = [
     endDate: "2025-02-30",
     role: "Full Stack Developer",
     status: "Completed",
-    client: "Direct client",
+    client: "Upwork",
     category: "MERN Stack",
     link: "https://shemashop.vercel.app/"
   }
