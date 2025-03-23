@@ -10,7 +10,6 @@ const AboutMe = () => {
       id="about"
       className="relative w-full bg-gradient-to-r from-[#090013] to-[#12122e] text-white py-48 px-6 md:px-16 lg:px-24 overflow-hidden"
     >
-
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 w-20 h-20 bg-[#5a189a] opacity-30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#7b2cbf] opacity-30 rounded-full blur-3xl animate-pulse"></div>
@@ -59,7 +58,7 @@ const AboutMe = () => {
           </h2>
 
           {/* Content Text */}
-          <div className="text-lg text-gray-300 leading-relaxed">
+          <div className="text-md text-gray-300 leading-loose">
             <p>
               I am a{" "}
               <strong className="text-white">

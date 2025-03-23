@@ -16,38 +16,34 @@ export default function ProjectDetail({ params }) {
 
   return (
     <>
-{/* Header */}
-<div className="w-full h-[300px] md:h-[400px] relative z-50">
-  <Image
-    src={headerImg}
-    alt="Header"
-    fill
-    className="object-cover opacity-60"
-    priority
-  />
+      {/* Header */}
+      <div className="w-full h-[300px] md:h-[400px] relative z-50">
+        <Image
+          src={headerImg}
+          alt="Header"
+          fill
+          className="object-cover"
+          priority
+        />
 
-  {/* Dark Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+            {project.title}
+          </h1>
 
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-    <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-      {project.title}
-    </h1>
-
-    <nav className="mt-3 text-sm md:text-base text-gray-300 flex flex-wrap justify-center gap-2">
-      <Link href="/" className="hover:text-white transition duration-200">
-        Home
-      </Link>
-      <span className="text-gray-400">&gt;</span>
-      <Link href="/projects" className="hover:text-white transition duration-200">
-        Projects
-      </Link>
-      <span className="text-gray-400">&gt;</span>
-      <span className="text-white font-semibold">{project.title}</span>
-    </nav>
-  </div>
-</div>
-
+          <nav className="mt-3 text-sm md:text-base text-gray-300 flex flex-wrap justify-center gap-2">
+            <Link href="/" className="transition duration-200">
+              Home
+            </Link>
+            <span className="text-gray-400">&gt;</span>
+            <Link href="/projects" className="transition duration-200">
+              Projects
+            </Link>
+            <span className="text-gray-400">&gt;</span>
+            <span className="text-white font-semibold">{project.title}</span>
+          </nav>
+        </div>
+      </div>
 
       <section className="bg-gradient-to-b from-[#ffffff] via-[#f5e8ff] to-[#e0c3fc] text-black min-h-screen pb-20">
         {/* Screenshot Section */}

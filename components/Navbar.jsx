@@ -36,7 +36,7 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-sm">
           {navLinks.map((item, index) => (
             <li key={index} className="relative cursor-pointer group">
-              <a href={item.href} className="hover:text-purple-800 transition">
+              <a href={item.href} className="hover:text-gray-100 transition">
                 {item.name}
               </a>
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-purple-800 transition-all duration-300 ease-out group-hover:w-full"></span>
