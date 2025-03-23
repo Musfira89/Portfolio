@@ -25,13 +25,13 @@ const AboutMe = () => {
           className="w-full md:w-2/5 flex justify-center"
         >
           <div className="relative">
-          <Image
-  src={Rightimage}
-  alt="About Me"
-  width={400}
-  height={400}
-  className="object-cover rounded-[50%] w-[300px] h-[400px] shadow-lg"
-/>
+            <Image
+              src={Rightimage}
+              alt="About Me"
+              width={400}
+              height={400}
+              className="object-cover rounded-[50%] w-[300px] h-[400px] shadow-lg"
+            />
 
             {/* Floating Highlight */}
             <div className="absolute top-[-10%] left-[-10%] w-20 h-20 bg-[#5a189a] opacity-20 rounded-full blur-3xl animate-pulse"></div>
