@@ -29,9 +29,9 @@ const ServicesSection = () => {
     },
     {
       id: "05",
-      title: "Full Stack Web Development",
+      title: "Full Stack Development (Python & AWS)",
       description:
-        "Complete frontend and backend solutions with clean code architecture, responsive design, and scalable infrastructure.",
+        "Complete frontend and backend solutions using Python, Node.js, and AWS cloud services for scalable, secure, and high-performance applications.",
     },
     {
       id: "06",
@@ -39,11 +39,16 @@ const ServicesSection = () => {
       description:
         "Engaging and intuitive user interface & user experience design that enhances usability and boosts customer retention.",
     },
+    {
+      id: "07",
+      title: "Mobile App Development (Flutter & React Native)",
+      description:
+        "Cross-platform mobile applications with Flutter and React Native, ensuring high performance and a smooth user experience on iOS & Android.",
+    },
   ];
-  
 
   return (
-    <section  id="services"  className="bg-black text-white py-32 px-6 md:px-16">
+    <section id="services" className="bg-black text-white py-32 px-6 md:px-16">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
@@ -69,16 +74,17 @@ const ServicesSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="flex justify-between items-center p-4 border-b border-gray-800 transition-all duration-300 transform hover:bg-purple-600 hover:text-white hover:-translate-y-2 rounded-lg"
+            className={`flex justify-between items-center p-4 border-b border-gray-800 transition-all duration-300 transform rounded-lg 
+            ${index === 2 ? "bg-purple-600 text-white -translate-y-2" : "hover:bg-purple-600 hover:text-white hover:-translate-y-2"}`}
           >
             {/* Left Section: ID + Title + Description */}
             <div className="flex items-start gap-4">
-              <span className="font-semibold text-purple-400 group-hover:text-white transition duration-300">
+              <span className="font-semibold text-purple-400 transition duration-300">
                 {service.id}
               </span>
               <div>
                 <h3 className="text-lg font-bold">{service.title}</h3>
-                <p className="text-gray-300 group-hover:text-white transition duration-300">
+                <p className="text-gray-300 transition duration-300">
                   {service.description}
                 </p>
               </div>
@@ -87,7 +93,7 @@ const ServicesSection = () => {
             {/* Right Arrow Icon */}
             <FontAwesomeIcon
               icon={faArrowRight}
-              className="text-xl text-purple-400 group-hover:text-white transition duration-300"
+              className="text-xl text-purple-400 transition duration-300"
             />
           </div>
         ))}

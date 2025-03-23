@@ -7,7 +7,10 @@ import Bgimage from "../assets/Portfolio/heroBg.png";
 
 const Header = () => {
   return (
-    <div id="home" className="relative w-full min-h-screen bg-gradient-to-r from-[#040108] to-[#160a2a] text-white">
+    <div
+      id="home"
+      className="relative w-full min-h-screen bg-gradient-to-r from-[#040108] to-[#160a2a] text-white"
+    >
       <Image
         src={Bgimage}
         alt="Background"
@@ -27,13 +30,13 @@ const Header = () => {
             I am <span className="text-white">Arees</span>
           </h1>
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text mt-2 leading-tight"
+            className="text-4xl sm:text-5xl md:text-5xl font-bold text-transparent bg-clip-text mt-2 leading-tight"
             style={{
               backgroundImage:
                 "linear-gradient(90deg, #8750f7 0%, #9b6af3 10%, #e5e7eb 100%)",
             }}
           >
-            Next-Level Web Developer.
+            Full-Stack Developer Shopify | WordPress .
           </h2>
 
           <p className="text-gray-300 mt-4 text-lg sm:text-xl leading-relaxed">

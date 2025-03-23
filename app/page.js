@@ -2,6 +2,7 @@ import ContactSection from "../components/Contact";
 import ExperienceEducation from "../components/ExperienceEducation";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import About from "../components/About"
 import Project from "../components/Projects";
 import SkillsSection from "../components/Skills";
 import ServicesSection from "../components/ServicesSection";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Header />
       <ServicesSection/>
+      <About/>
       <Project />
       <ExperienceEducation/>
       <SkillsSection/>

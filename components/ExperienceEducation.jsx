@@ -1,77 +1,100 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import badge from "../assets/Portfolio/badge.png";
 
-// Professional Experience Data (Shopify, WordPress, Flutter, MERN + Freelance)
 const experienceData = [
   {
     year: "2023 - Present",
     title: "Freelance Full Stack Developer | Upwork & Direct Leads",
-    place: "Shopify Stores • WordPress CMS • Flutter Apps • MERN Stack Solutions",
+    place: [
+      "Full Stack Development with MERN & Next.js 14",
+      "Shopify Stores, WordPress CMS",
+      "Flutter & React Native Apps",
+      "Python, API Integrations, Cloud Deployments"
+    ],
+  },
+  
+  {
+    year: "June 2024 - Present",
+    title: "Senior Full Stack Developer | Contour Software",
+    place: [
+      "Developed cross-platform apps with Flutter & React Native",
+      "Web apps with React, Next.js, Node.js",
+      "Firebase, payment gateways, AI",
+      "Database handling: MySQL, MongoDB",
+      "App Store + Play Store deployment"
+    ],
   },
   {
-    year: "2021 - 2023",
-    title: "Senior Full Stack Developer | MERN, Shopify, WordPress",
-    place: "TechHive Solutions, Lahore",
+    year: "March 2021 - March 2023",
+    title: "Full Stack Developer | Gaditek",
+    place: [
+      "Flutter/React Native apps, Node.js/Firebase APIs",
+      "E-commerce sites with Next.js, WordPress, Shopify",
+      "Security & performance enhancements"
+    ],
   },
   {
-    year: "2020 - 2021",
-    title: "Frontend Developer | React, Next.js, TailwindCSS",
-    place: "CodeCrafters Agency, Islamabad",
-  },
-  {
-    year: "2019 - 2020",
-    title: "Mobile App Developer | Flutter & Firebase",
-    place: "Digital Soft Tech, Karachi",
-  },
-  {
-    year: "2018 - 2019",
-    title: "Web Developer | WordPress & Custom PHP",
-    place: "ITVision Software House, Rawalpindi",
+    year: "Jan 2019 - Feb 2021",
+    title: "Junior Web Developer | Logicose",
+    place: [
+      "Assisted Flutter & React Native apps",
+      "Customized WordPress & Shopify sites",
+      "JS, PHP, MySQL, API integrations"
+    ],
   },
 ];
 
-
 export default function Experience() {
   return (
-    <section id="experience" className="bg-black text-white py-32 px-6 md:px-16 lg:px-24">
-      <div className="max-w-6xl mx-auto">
-        <div>
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-3 sm:gap-4 mb-8 sm:mb-10 bg-clip-text text-transparent"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, #8750f7 0%, #9b6af3 10%, #e5e7eb 100%)",
-            }}
-          >
-            <Image
-              src={badge}
-              alt="Experience"
-              width={30}
-              height={30}
-              className="sm:w-8 sm:h-8 md:w-10 md:h-10"
-            />
-            My Professional Experience
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
-            {experienceData.map((exp, index) => (
-              <div
-                key={index}
-                className="px-5 md:px-8 py-6 bg-[#140C1C] dark:bg-primary-color-light rounded-2xl relative z-0 group transition-all duration-500 ease-in-out overflow-hidden"
-              >
-                {/* Hover Background Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-purple-600 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out"></div>
+    <section id="experience" className="bg-black text-white py-32 px-4 md:px-16 lg:px-24 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-3xl md:text-4xl font-bold flex items-center gap-3 mb-24 bg-clip-text text-transparent"
+          style={{ backgroundImage: "linear-gradient(90deg, #8750f7 0%, #9b6af3 20%, #e5e7eb 100%)" }}
+        >
+          <Image src={badge} alt="badge" width={40} height={40} />
+          My Professional Experience
+        </motion.h2>
 
-                {/* Card Content */}
-                <div className="relative z-10 transition-all duration-500 ease-in-out group-hover:text-white">
-                  <p className="text-md text-[#8750f7] font-bold">{exp.year}</p>
-                  <h3 className="text-xl font-bold mt-2 mb-2">{exp.title}</h3>
-                  <p className="text-sm text-gray-400 group-hover:text-white">
-                    {exp.place}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Central Line with Reduced Height */}
+        <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-pink-500 opacity-70 rounded-full h-5/6"></div>
+
+        {/* Timeline Items */}
+        <div className="relative z-10 flex flex-col gap-16">
+          {experienceData.map((exp, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className={`relative flex items-center w-full md:w-1/2 ${isLeft ? "self-start pr-12" : "self-end pl-12"}`}
+              >
+                {/* Experience Card with Bullet Points */}
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-[#1c1c24] border border-gray-800 hover:border-purple-600 transition duration-300 p-10 rounded-xl shadow-lg w-full flex flex-col justify-between text-left"
+                >
+                  <p className="text-sm text-purple-400 font-semibold">{exp.year}</p>
+                  <h3 className="text-lg md:text-xl font-bold mt-2">{exp.title}</h3>
+                  <ul className="text-sm text-gray-300 mt-3 list-disc pl-5 space-y-2">
+                    {exp.place.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -11,14 +11,18 @@ import shopifyIcon from "../assets/Portfolio/shopify.webp";
 import nextjsIcon from "../assets/Portfolio/nextjs.png";
 import nodeIcon from "../assets/Portfolio/nodejs.png";
 import mongoIcon from "../assets/Portfolio/mongodb.webp";
+import python from "../assets/Portfolio/python.webp";
+import flutter from "../assets/Portfolio/flutter.webp";
 
 const skills = [
+  { name: "Flutter", icon: flutter, percentage: "98%" },
+  { name: "Python", icon: python, percentage: "78%" },
   { name: "Figma", icon: figmaIcon, percentage: "92%" },
   { name: "WordPress", icon: wordpressIcon, percentage: "99%" },
   { name: "Shopify", icon: shopifyIcon, percentage: "98%" },
-  { name: "React.js", icon: reactIcon, percentage: "89%" },
-  { name: "Next.js 14", icon: nextjsIcon, percentage: "90%" },
   { name: "JavaScript", icon: jsIcon, percentage: "93%" },
+  { name: "Next.js 14", icon: nextjsIcon, percentage: "90%" },
+  { name: "React.js", icon: reactIcon, percentage: "89%" },
   { name: "Node.js", icon: nodeIcon, percentage: "88%" },
   { name: "MongoDB", icon: mongoIcon, percentage: "85%" },
 ];

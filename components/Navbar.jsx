@@ -24,16 +24,19 @@ const Navbar = () => {
         {/* Logo & Email */}
         <div className="flex items-center space-x-4 md:space-x-9">
           <Image src={logo} alt="Logo" className="h-12 w-12 md:h-14 md:w-14" />
-          <span className="hidden sm:block text-sm md:text-md font-medium">
+          <a
+            href="mailto:areesshah678@gmail.com"
+            className="hidden sm:block text-sm md:text-md font-medium text-white hover:text-purple-800 cursor-pointer transition duration-300"
+          >
             areesshah678@gmail.com
-          </span>
+          </a>
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-sm">
           {navLinks.map((item, index) => (
             <li key={index} className="relative cursor-pointer group">
-              <a href={item.href} className="hover:text-white">
+              <a href={item.href} className="hover:text-purple-800 transition">
                 {item.name}
               </a>
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-purple-800 transition-all duration-300 ease-out group-hover:w-full"></span>
@@ -76,9 +79,12 @@ const Navbar = () => {
         <Image src={logo} alt="Logo" className="h-16 w-16" />
 
         {/* Email */}
-        <span className="text-sm text-gray-300 mb-4">
+        <a
+          href="mailto:areesshah678@gmail.com"
+          className="text-sm text-gray-300 hover:text-purple-400 cursor-pointer transition duration-300"
+        >
           areesshah678@gmail.com
-        </span>
+        </a>
 
         {/* Navigation Links */}
         {navLinks.map((item, index) => (
