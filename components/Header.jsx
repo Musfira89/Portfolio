@@ -53,7 +53,7 @@ const Header = () => {
               }}
               className="px-8 sm:px-10 py-3 sm:py-4 border border-purple-500 text-purple-500 rounded-full hover:bg-purple-600 hover:text-white transition duration-300 flex items-center space-x-2"
             >
-              <span>See Projects</span>
+              <span>View Projects</span>
             </button>
           </div>
         </div>
