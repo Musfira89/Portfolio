@@ -26,17 +26,24 @@ export default function ProjectDetail({ params }) {
           priority
         />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        {/* Glassmorphism Effect */}
+        <div className="absolute inset-0 bg-cyan-600/20 backdrop-blur-lg flex flex-col items-center justify-center text-center px-4 rounded-lg shadow-lg">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
             {project.title}
           </h1>
 
           <nav className="mt-3 text-sm md:text-base text-gray-300 flex flex-wrap justify-center gap-2">
-            <Link href="/" className="transition duration-200">
+            <Link
+              href="/"
+              className="transition duration-200 text-cyan-400 hover:text-cyan-300 hover:scale-105"
+            >
               Home
             </Link>
             <span className="text-gray-400">&gt;</span>
-            <Link href="/projects" className="transition duration-200">
+            <Link
+              href="/projects"
+              className="transition duration-200 text-cyan-400 hover:text-cyan-300 hover:scale-105"
+            >
               Projects
             </Link>
             <span className="text-gray-400">&gt;</span>
@@ -45,7 +52,7 @@ export default function ProjectDetail({ params }) {
         </div>
       </div>
 
-      <section className="bg-gradient-to-b from-[#ffffff] via-[#f5e8ff] to-[#e0c3fc] text-black min-h-screen pb-20">
+      <section className="bg-gradient-to-b from-white via-[#f5e8ff] to-[#e0c3fc] text-black min-h-screen pb-20">
         {/* Screenshot Section */}
         <div className="w-full max-w-5xl mx-auto mt-12 px-4 relative">
           {selectedImage ? (
@@ -76,10 +83,10 @@ export default function ProjectDetail({ params }) {
                 className={`relative w-20 h-20 rounded-lg transition-all
           ${
             selectedImage === img
-              ? "ring-2 ring-purple-300"
+              ? "ring-2 ring-cyan-300"
               : "ring-2 ring-transparent"
           }
-          hover:ring-purple-400 bg-gray-900 hover:shadow-md`}
+          hover:ring-cyan-400 bg-gray-900 hover:shadow-md`}
               >
                 <Image
                   src={img}
@@ -112,7 +119,6 @@ export default function ProjectDetail({ params }) {
           {/* Project Details */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-              {" "}
               Project Details
             </h2>
             <div className="grid grid-cols-2 gap-y-5 text-md text-gray-700">
@@ -136,18 +142,6 @@ export default function ProjectDetail({ params }) {
           </div>
         </div>
 
-        {/* Description Section */}
-        {project.description && (
-          <div className="max-w-6xl mx-auto px-4 md:px-10 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-              {" "}
-              Detailed Description
-            </h2>
-            <p className="text-gray-700 text-md leading-relaxed">
-              {project.description}
-            </p>
-          </div>
-        )}
         {/* Tech Stack Section */}
         {project.techStack?.length > 0 && (
           <div className="max-w-6xl mx-auto px-4 md:px-10 mb-16">
@@ -159,38 +153,15 @@ export default function ProjectDetail({ params }) {
                 <span
                   key={idx}
                   className="relative px-5 py-2.5 rounded-full text-sm font-medium 
-                     text-gray-200 dark:text-white bg-gray-900/90 shadow-md
-                     border-2 border-transparent ring-2 ring-purple-500/40
-                     hover:ring-purple-400/70 hover:scale-105 
+                     text-white bg-gray-900/90 shadow-md
+                     border-2 border-transparent ring-2 ring-cyan-500/40
+                     hover:ring-cyan-400/70 hover:scale-105 
                      transition-all duration-300 ease-in-out"
                 >
                   ⚙ {tech}
                 </span>
               ))}
             </div>
-          </div>
-        )}
-
-        {/* Key Features Section */}
-        {project.features?.length > 0 && (
-          <div className="max-w-6xl mx-auto px-4 md:px-10 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-              {" "}
-              Key Features
-            </h2>
-            <ul className="space-y-4 pl-6">
-              {project.features.map((features, index) => (
-                <li
-                  key={index}
-                  className="relative text-lg text-gray-700 leading-relaxed"
-                >
-                  <span className="absolute -left-6 text-purple-900 text-xl">
-                    •
-                  </span>
-                  {features}
-                </li>
-              ))}
-            </ul>
           </div>
         )}
 
@@ -201,7 +172,7 @@ export default function ProjectDetail({ params }) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-purple-900 hover:bg-purple-800 text-white font-semibold px-6 py-4 rounded-md transition-all shadow-md hover:scale-105"
+              className="inline-flex items-center bg-cyan-600 hover:bg-cyan-500 text-white font-semibold px-6 py-4 rounded-md transition-all shadow-md hover:scale-105"
             >
               View Live Project &rarr;
             </a>

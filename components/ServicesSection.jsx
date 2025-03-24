@@ -56,30 +56,34 @@ const ServicesSection = () => {
             className="bg-clip-text text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(90deg, #8750f7 0%, #9b6af3 10%, #e5e7eb 100%)",
+                "linear-gradient(90deg, #3b82f6 0%, #67e8f9 10%, #ffffff 100%)",
             }}
           >
             My Quality Services
           </span>
         </h2>
-
+  
         <p className="text-gray-300 mt-3 max-w-xl mx-auto text-sm sm:text-base md:text-md leading-relaxed">
-          We put your ideas and thus your wishes in the form of a unique web
-          project that inspires you and your customers.
+          We transform your ideas into a unique web project that captivates both
+          you and your audience.
         </p>
       </div>
-
+  
       {/* Services List */}
       <div className="mt-10 max-w-4xl mx-auto">
         {services.map((service, index) => (
           <div
             key={index}
             className={`flex justify-between items-center p-4 border-b border-gray-800 transition-all duration-300 transform rounded-lg 
-            ${index === 2 ? "bg-purple-600 text-white -translate-y-2" : "hover:bg-purple-600 hover:text-white hover:-translate-y-2"}`}
+            ${
+              index === 2
+                ? "bg-cyan-600 text-white -translate-y-2"
+                : "hover:bg-cyan-600 hover:text-white hover:-translate-y-2"
+            }`}
           >
             {/* Left Section: ID + Title + Description */}
             <div className="flex items-start gap-4">
-              <span className="font-semibold text-purple-400 transition duration-300">
+              <span className="font-semibold text-cyan-400 transition duration-300">
                 {service.id}
               </span>
               <div>
@@ -89,17 +93,18 @@ const ServicesSection = () => {
                 </p>
               </div>
             </div>
-
+  
             {/* Right Arrow Icon */}
             <FontAwesomeIcon
               icon={faArrowRight}
-              className="text-xl text-purple-400 transition duration-300"
+              className="text-xl text-cyan-400 transition duration-300"
             />
           </div>
         ))}
       </div>
     </section>
   );
+  
 };
 
 export default ServicesSection;

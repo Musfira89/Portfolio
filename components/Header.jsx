@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div
       id="home"
-      className="relative w-full min-h-screen bg-gradient-to-r from-[#040108] to-[#160a2a] text-white"
+      className="relative w-full min-h-screen bg-gradient-to-r from-[#0a0a0f] to-[#111827] text-white"
     >
       <Image
         src={Bgimage}
@@ -33,7 +33,7 @@ const Header = () => {
             className="text-4xl sm:text-5xl md:text-5xl font-bold text-transparent bg-clip-text mt-2 leading-tight"
             style={{
               backgroundImage:
-                "linear-gradient(90deg, #8750f7 0%, #9b6af3 10%, #e5e7eb 100%)",
+                "linear-gradient(90deg, #3b82f6 0%, #67e8f9 50%, #ffffff 100%)",
             }}
           >
             Full-Stack Developer Shopify | WordPress .
@@ -51,7 +51,7 @@ const Header = () => {
                 const worksSection = document.getElementById("works");
                 worksSection?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-8 sm:px-10 py-3 sm:py-4 border border-purple-500 text-purple-500 rounded-full hover:bg-purple-600 hover:text-white transition duration-300 flex items-center space-x-2"
+              className="px-8 sm:px-10 py-3 sm:py-4 border border-cyan-500 text-cyan-500 rounded-full hover:bg-cyan-600 hover:text-white transition duration-300 flex items-center space-x-2"
             >
               <span>View Projects</span>
             </button>
