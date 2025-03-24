@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Image from "next/image";
 import Rightimage from "../assets/Portfolio/right.svg";
 import Bgimage from "../assets/Portfolio/heroBg.png";
+import { Typewriter } from "react-simple-typewriter";
 
 const Header = () => {
   return (
@@ -36,7 +37,20 @@ const Header = () => {
                 "linear-gradient(90deg, #3b82f6 0%, #67e8f9 50%, #ffffff 100%)",
             }}
           >
-            Full-Stack Developer Shopify | WordPress .
+            <Typewriter
+              words={[
+                "Full Stack & Mobile App Developer.",
+                "Expert in React.js & Node.js.",
+                "Expert in PHP & Python.",
+                "Expert in Flutter & React Native.",
+              ]}
+              loop={Infinity}
+              cursor
+              cursorStyle="|"
+              typeSpeed={80}
+              deleteSpeed={50}
+              delaySpeed={2000}
+            />
           </h2>
 
           <p className="text-gray-300 mt-4 text-lg sm:text-xl leading-relaxed">
