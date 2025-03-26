@@ -51,7 +51,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <a
         href="#"
-        className="fixed bottom-6 right-6 bg-cyan-500 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white shadow-lg hover:bg-cyan-400 transition duration-300"
+        className="fixed bottom-6 right-6 bg-cyan-800 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white shadow-lg hover:bg-cyan-400 transition duration-300"
       >
         ↑
       </a>

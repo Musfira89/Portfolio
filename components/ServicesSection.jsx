@@ -62,13 +62,13 @@ const ServicesSection = () => {
             My Quality Services
           </span>
         </h2>
-  
+
         <p className="text-gray-300 mt-3 max-w-xl mx-auto text-sm sm:text-base md:text-md leading-relaxed">
           We transform your ideas into a unique web project that captivates both
           you and your audience.
         </p>
       </div>
-  
+
       {/* Services List */}
       <div className="mt-10 max-w-4xl mx-auto">
         {services.map((service, index) => (
@@ -77,8 +77,8 @@ const ServicesSection = () => {
             className={`flex justify-between items-center p-4 border-b border-gray-800 transition-all duration-300 transform rounded-lg 
             ${
               index === 2
-                ? "bg-cyan-600 text-white -translate-y-2"
-                : "hover:bg-cyan-600 hover:text-white hover:-translate-y-2"
+                ? "bg-cyan-700 text-white -translate-y-2"
+                : "hover:bg-cyan-700 hover:text-white hover:-translate-y-2"
             }`}
           >
             {/* Left Section: ID + Title + Description */}
@@ -93,18 +93,17 @@ const ServicesSection = () => {
                 </p>
               </div>
             </div>
-  
+
             {/* Right Arrow Icon */}
             <FontAwesomeIcon
               icon={faArrowRight}
-              className="text-xl text-cyan-400 transition duration-300"
+              className="text-xl text-cyan-700 transition duration-300"
             />
           </div>
         ))}
       </div>
     </section>
   );
-  
 };
 
 export default ServicesSection;

@@ -6,6 +6,7 @@ import { projects } from "../../../data/projectsData";
 import headerImg from "../../../assets/Portfolio/heroBg.png";
 import Footer from "../../../components/Footer";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ProjectDetail({ params }) {
   const project = projects.find(
@@ -18,16 +19,13 @@ export default function ProjectDetail({ params }) {
     <>
       {/* Header */}
       <div className="w-full h-[300px] md:h-[400px] relative z-50">
-        <Image
-          src={headerImg}
-          alt="Header"
-          fill
-          className="object-cover"
-          priority
-        />
-
-        {/* Glassmorphism Effect */}
-        <div className="absolute inset-0 bg-cyan-600/20 backdrop-blur-lg flex flex-col items-center justify-center text-center px-4 rounded-lg shadow-lg">
+        {/* Glassmorphism Gradient Effect */}
+        <div className="absolute inset-0 bg-[#0a0a0f] text-gray-400  bg-opacity-70 backdrop-blur-xl flex flex-col items-center justify-center text-center px-4  shadow-xl">
+          {/* Floating Glows */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 bg-cyan-500 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+          </div>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
             {project.title}
           </h1>
@@ -52,7 +50,12 @@ export default function ProjectDetail({ params }) {
         </div>
       </div>
 
-      <section className="bg-gradient-to-b from-white via-[#f5e8ff] to-[#e0c3fc] text-black min-h-screen pb-20">
+      <section className="relative w-full bg-gradient-to-l from-[#0a0a0f] to-[#111827] text-white pb-20 min-h-screen overflow-hidden">
+        {/* Floating Glows */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-cyan-500 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+        </div>
         {/* Screenshot Section */}
         <div className="w-full max-w-5xl mx-auto mt-12 px-4 relative">
           {selectedImage ? (
@@ -61,7 +64,7 @@ export default function ProjectDetail({ params }) {
                 src={selectedImage}
                 alt={project.title}
                 width={1100}
-                height={600}
+                height={700}
                 className="rounded-3xl object-contain w-full h-auto"
                 priority
               />
@@ -103,13 +106,19 @@ export default function ProjectDetail({ params }) {
         <hr className="border-gray-300 max-w-6xl mx-auto my-12" />
 
         {/* Project Info Section */}
-        <div className="max-w-6xl mx-auto px-4 md:px-10 mb-16 grid md:grid-cols-2 gap-12">
+        <motion.div
+          className="max-w-6xl mx-auto px-4 md:px-10 mb-16 grid md:grid-cols-2 gap-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           {/* Project Overview */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
               Project Overview
             </h2>
-            <p className="text-gray-700 text-md leading-relaxed">
+            <p className="text-gray-300 text-md leading-relaxed">
               {project.overview ||
                 project.description ||
                 "No overview provided."}
@@ -118,10 +127,10 @@ export default function ProjectDetail({ params }) {
 
           {/* Project Details */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
               Project Details
             </h2>
-            <div className="grid grid-cols-2 gap-y-5 text-md text-gray-700">
+            <div className="grid grid-cols-2 gap-y-5 text-md text-gray-500">
               {[
                 ["Client", project.client || "Upwork"],
                 ["Category", project.category || "General"],
@@ -132,7 +141,7 @@ export default function ProjectDetail({ params }) {
                 ["Duration", project.duration || "N/A"],
               ].map(([label, value], index) => (
                 <div key={index}>
-                  <span className="block font-medium text-gray-900">
+                  <span className="block font-medium text-gray-100">
                     {label}
                   </span>
                   <span>{value}</span>
@@ -140,12 +149,34 @@ export default function ProjectDetail({ params }) {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Project Description */}
+        <motion.div
+          className="max-w-6xl mx-auto px-4 md:px-10 mb-16"
+          initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
+            Description
+          </h2>
+          <p className="text-gray-300 text-md leading-relaxed font-light">
+            {project.description || "No additional description provided."}
+          </p>
+        </motion.div>
 
         {/* Tech Stack Section */}
         {project.techStack?.length > 0 && (
-          <div className="max-w-6xl mx-auto px-4 md:px-10 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+          <motion.div
+            className="max-w-6xl mx-auto px-4 md:px-10 mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
               Tech Stack
             </h2>
             <div className="flex flex-wrap gap-4">
@@ -153,30 +184,39 @@ export default function ProjectDetail({ params }) {
                 <span
                   key={idx}
                   className="relative px-5 py-2.5 rounded-full text-sm font-medium 
-                     text-white bg-gray-900/90 shadow-md
-                     border-2 border-transparent ring-2 ring-cyan-500/40
-                     hover:ring-cyan-400/70 hover:scale-105 
-                     transition-all duration-300 ease-in-out"
+               text-white bg-gray-900/90 shadow-md
+               border-2 border-transparent ring-2 ring-cyan-500/40
+               hover:ring-cyan-400/70 hover:scale-105 
+               transition-all duration-300 ease-in-out"
                 >
                   ⚙ {tech}
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Live Project Button */}
         {project.link && (
-          <div className="max-w-6xl mx-auto px-4 mt-6 mb-10 text-center">
+          <motion.div
+            className="max-w-6xl mx-auto px-4 mt-6 mb-10 text-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          viewport={{ once: true }}
+          >
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-cyan-600 hover:bg-cyan-500 text-white font-semibold px-6 py-4 rounded-md transition-all shadow-md hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 
+               hover:from-cyan-400 hover:to-blue-500 
+               text-white font-semibold px-6 py-4 rounded-md 
+               transition-all shadow-md hover:scale-105"
             >
               View Live Project &rarr;
             </a>
-          </div>
+          </motion.div>
         )}
       </section>
       <Footer />
