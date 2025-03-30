@@ -17,30 +17,18 @@ const ServicesSection = () => {
     },
     {
       id: "03",
-      title: "Next.js 14 & React Development",
+      title: "Full Stack Development (Next.js 14, React, Python & AWS)",
       description:
-        "Modern web applications built with Next.js 14 and React – fast, scalable, SEO-friendly, and high-performing.",
+        "Scalable and high-performance web applications using Next.js 14, React, Python, and AWS cloud services, ensuring security and efficiency.",
     },
     {
       id: "04",
-      title: "MERN Stack Development",
-      description:
-        "End-to-end full stack web development using MongoDB, Express.js, React, and Node.js for powerful business applications.",
-    },
-    {
-      id: "05",
-      title: "Full Stack Development (Python & AWS)",
-      description:
-        "Complete frontend and backend solutions using Python, Node.js, and AWS cloud services for scalable, secure, and high-performance applications.",
-    },
-    {
-      id: "06",
       title: "UI/UX Design",
       description:
         "Engaging and intuitive user interface & user experience design that enhances usability and boosts customer retention.",
     },
     {
-      id: "07",
+      id: "05",
       title: "Mobile App Development (Flutter & React Native)",
       description:
         "Cross-platform mobile applications with Flutter and React Native, ensuring high performance and a smooth user experience on iOS & Android.",

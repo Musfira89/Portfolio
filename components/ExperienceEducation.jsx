@@ -3,16 +3,6 @@
 import { motion } from "framer-motion";
 
 const experienceData = [
-  {
-    year: "2023 - Present",
-    title: "Freelance Full Stack Developer | Upwork & Direct Leads",
-    place: [
-      "Full Stack Development with MERN & Next.js 14",
-      "Shopify Stores, WordPress CMS",
-      "Flutter & React Native Apps",
-      "Python, API Integrations, Cloud Deployments",
-    ],
-  },
 
   {
     year: "June 2024 - Present",

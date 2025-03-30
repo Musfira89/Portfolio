@@ -14,7 +14,10 @@ const RecentWorks = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <section id="works" className="bg-[#0a0f1a] text-white py-22 relative overflow-hidden">
+    <section
+      id="works"
+      className="bg-[#0a0f1a] text-white py-22 relative overflow-hidden"
+    >
       {/* Soft Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="w-[70vw] h-[70vh] bg-gradient-to-br from-[#3b82f6] via-[#67e8f9] to-[#86efac] opacity-10 blur-3xl rounded-full absolute left-1/2 top-[55%] transform -translate-x-1/2 -translate-y-1/2" />
@@ -75,24 +78,27 @@ const RecentWorks = () => {
                 href={`/projects/${project.id}`}
                 className="block h-full w-full"
               >
-                <div className="relative w-full h-64 md:h-96 overflow-hidden rounded-xl">
-                  <Image
-                    src={project.image}
-                    alt={project.title || "Project Image"}
-                    fill
-                    className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
-                  />
+<div
+  className={`relative w-full h-96 overflow-hidden rounded-xl ${
+    project.category === "MobileApp" ? "flex items-center justify-center bg-black" : ""
+  }`}
+>
+  <Image
+    src={project.image}
+    alt={project.title || "Project Image"}
+    fill
+    className={`rounded-xl transition-transform duration-500 group-hover:scale-105 ${
+      project.category === "MobileApp" ? "object-contain" : "object-cover"
+    }`}
+  />
 
-                  {/* Bottom Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#67e8f9]/80 via-black/60 to-transparent px-5 py-4 rounded-b-xl">
-                    <h3 className="text-lg font-semibold text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      Click to view details
-                    </p>
-                  </div>
-                </div>
+  {/* Bottom Overlay */}
+  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#67e8f9]/80 via-black/60 to-transparent px-5 py-4 rounded-b-xl">
+    <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+    <p className="text-sm text-gray-300">Click to view details</p>
+  </div>
+</div>
+
               </Link>
             </motion.div>
           ))}

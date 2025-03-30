@@ -3,7 +3,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects } from "../../../data/projectsData";
-import headerImg from "../../../assets/Portfolio/heroBg.png";
 import Footer from "../../../components/Footer";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -65,7 +64,9 @@ export default function ProjectDetail({ params }) {
                 alt={project.title}
                 width={1100}
                 height={700}
-                className="rounded-3xl object-contain w-full h-auto"
+                className={`rounded-3xl object-contain w-full ${
+                  project.category === "MobileApp" ? "h-[500px]" : "h-auto"
+                }`}
                 priority
               />
             </div>
@@ -155,9 +156,9 @@ export default function ProjectDetail({ params }) {
         <motion.div
           className="max-w-6xl mx-auto px-4 md:px-10 mb-16"
           initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
             Description
@@ -201,9 +202,9 @@ export default function ProjectDetail({ params }) {
           <motion.div
             className="max-w-6xl mx-auto px-4 mt-6 mb-10 text-center"
             initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true }}
           >
             <a
               href={project.link}
