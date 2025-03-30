@@ -1,7 +1,6 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -251,7 +250,6 @@ const Testimonials = () => {
                     {testimonial.title}
                   </h3>
                   <FontAwesomeIcon
-                    icon={faQuoteLeft}
                     className="text-cyan-400 text-xl"
                   />
                 </div>
